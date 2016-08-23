@@ -16,6 +16,10 @@ def main():
         '--reference', action='append', required=True,
         help='Give the name(s) of the reference sequence(s).')
 
+    parser.add_argument(
+        '--region', action='append', required=True,
+        help='Give the range and name of the wanted translated region(s).')
+
     args = parser.parse_args()
 
     alignment = AlignIO.read(sys.stdin, 'fasta')
